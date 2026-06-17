@@ -1,14 +1,20 @@
-node {
-    git branch: 'main', url: 'https://github.com/DinaGamalMahmoud/simple-java-app.git'
-    stage('Build') {
-        sh 'echo "Building the application..."'
-    }
-    stage('Test') {
-        if (env.BRANCH_NAME == 'feat') {
-            sh 'echo "Running tests..."'
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building...'
+            }
         }
-        else {
-            sh 'echo "Skipping tests for non-feat branches."'
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying...'
+            }
         }
     }
 }
