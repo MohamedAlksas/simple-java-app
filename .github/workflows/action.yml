@@ -24,4 +24,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: mohamedalksas/java-app:$GITHUB_REF
+          tags: mohamedalksas/java-app:$GITHUB_REF_NAME
